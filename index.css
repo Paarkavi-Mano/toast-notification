@@ -1,0 +1,86 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Poppins", sans-serif;
+}
+body{
+    background:#eae3e3;
+}
+.container{
+    margin:10%;
+    display:flex;
+
+
+}
+.container button{
+    margin:20px;
+    color:#fff;
+    background:#333;
+    width:100%;
+    border:none;
+    outline:none;
+    padding:12px;
+    font-size:15px;
+    font-weight:500;
+    cursor:pointer;
+}
+#toastBox{
+    position:absolute;
+    bottom:30px;
+    right:30px;
+    display:flex;
+    align-items:flex-end;
+    flex-direction: column;
+    overflow:hidden;
+    padding:20px;
+
+}
+.toast{
+    width:350px;
+    height:50px;
+    background:#fff;
+    font-weight:500;
+    margin:15px 0;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+    display:flex;
+    align-items:center;
+    position:relative;
+    transform:translateX(100%);
+    animation:moveleft 0.5s linear forwards;
+}
+
+@keyframes moveleft {
+    100%{
+        transform:translateX(0);
+
+    }
+    
+}
+.success-icon{
+    margin:0 10px;
+    color:green;
+}
+.error-icon{
+    margin:0 10px;
+    color:red;
+}
+.invalid-icon{
+    margin:0 10px;
+    color:orange;
+}
+.toast::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:5px;
+    background:#333;
+    animation:anim 5s linear forwards;
+}
+@keyframes anim{
+    100%{
+        width:0;
+    }
+}
